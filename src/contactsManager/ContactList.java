@@ -49,7 +49,7 @@ public class ContactList {
         return index;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         int index = getIndexOfItemByName(String.valueOf(phoneNumber));
 
         // 2. remove the item in the grocery list at that index

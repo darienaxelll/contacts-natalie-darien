@@ -3,9 +3,9 @@ package contactsManager;
 public class ContactItem {
     private String firstName;
     private String lastName;
-    private long phoneNumber;
+    private String phoneNumber;
 
-    public  ContactItem(String firstName, String lastName, long phoneNumber) {
+    public  ContactItem(String firstName, String lastName, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -13,7 +13,7 @@ public class ContactItem {
 
     public static ContactItem createFromString(String itemString) {
         String [] parts = itemString.split(" ");
-        return new ContactItem(parts[0].trim(), parts[1].trim(), Integer.parseInt(parts[2].trim()));
+        return new ContactItem(parts[0].trim(), parts[1].trim(),(parts[2].trim()));
     }
 
     @Override
@@ -37,11 +37,11 @@ public class ContactItem {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
-        return (int) phoneNumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

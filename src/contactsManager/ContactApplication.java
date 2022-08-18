@@ -36,8 +36,8 @@ public class ContactApplication {
         Input userInput = new Input();
 
         ContactList contactList = new ContactList();
-        ContactItem person1 = new ContactItem("Matt","Grey", 1231231234);
-        ContactItem person2 = new ContactItem("Nat","Sneed", 1231231235);
+        ContactItem person1 = new ContactItem("Matt","Grey", "1231231234");
+        ContactItem person2 = new ContactItem("Nat","Sneed", "1231231235");
 
         contactList.addContactItem(person1);
         contactList.addContactItem(person2);
@@ -52,7 +52,6 @@ public class ContactApplication {
             case 2:
                 // TODO: add a new contact
                 contactList.addContactItem(createFromString(userInput.getString()));
-
                 break;
             case 3:
                 // TODO: Search contact by name
