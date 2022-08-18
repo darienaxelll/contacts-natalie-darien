@@ -25,16 +25,6 @@ public class ContactList {
         }
     }
 
-    public void removeContactItem(String itemName) {
-        // 1. find the index of the grocery item with itemName
-        int index = getIndexOfItemByName(itemName);
-
-        // 2. remove the item in the grocery list at that index
-        if(index > -1) {
-            contactItems.remove(index);
-        }
-    }
-
     private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < contactItems.size(); i++) {
@@ -47,6 +37,16 @@ public class ContactList {
             }
         }
         return index;
+    }
+
+    public void removeContactItem(String itemName) {
+        // 1. find the index of the contact item with itemName
+        int index = getIndexOfItemByName(itemName);
+
+        // 2. remove the item in the contact list at that index
+        if(index > -1) {
+            contactItems.remove(index);
+        }
     }
 
     public void setPhoneNumber(String phoneNumber) {

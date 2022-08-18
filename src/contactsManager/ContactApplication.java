@@ -10,7 +10,6 @@ public class ContactApplication {
 
     public static void main(String[] args) {
         Input input = new Input();
-
         // loop until the user says he/she does not wish to continue
         int choice = INVALID_CHOICE;
         while (choice != EXIT_CHOICE) {
@@ -54,9 +53,11 @@ public class ContactApplication {
                 break;
             case 3:
                 // TODO: Search contact by name
+                contactList.getItemByName(userInput.getString());
                 break;
             case 4:
                 // TODO: Delete contact
+                contactList.removeContactItem(userInput.getString());
                 break;
             case 5:
                 // TODO: Exit
