@@ -3,9 +3,9 @@ package contactsManager;
 public class ContactItem {
     private String firstName;
     private String lastName;
-    private int phoneNumber;
+    private long phoneNumber;
 
-    public  ContactItem(String firstName, String lastName, int phoneNumber) {
+    public  ContactItem(String firstName, String lastName, long phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -38,10 +38,10 @@ public class ContactItem {
     }
 
     public int getPhoneNumber() {
-        return phoneNumber;
+        return (int) phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
