@@ -66,8 +66,8 @@ public class ContactListGateway {
         // and returns the Path object we need to work with the data file
         private static Path getFilePath() {
             try {
-                Path folder = Paths.get("grocery_list");
-                Path file = Paths.get("grocery_list", "data.txt");
+                Path folder = Paths.get("contact_list");
+                Path file = Paths.get("contact_list", "data.txt");
                 if(Files.exists(folder)) {
                     System.out.println("Hey the folder already exists!");
                 } else {
