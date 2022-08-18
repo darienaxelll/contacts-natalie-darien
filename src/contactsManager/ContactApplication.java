@@ -33,7 +33,7 @@ public class ContactApplication {
     }
 
     private static void doChoice(int choice) {
-        Input userInpur = new Input();
+        Input userInput = new Input();
 
         ContactList contactList = new ContactList();
         ContactItem person1 = new ContactItem("Matt","Grey", 1231231234);
@@ -51,7 +51,8 @@ public class ContactApplication {
                 break;
             case 2:
                 // TODO: add a new contact
-                contactList.addContactItem(createFromString(userInpur.getString()));
+                contactList.addContactItem(createFromString(userInput.getString()));
+
                 break;
             case 3:
                 // TODO: Search contact by name
