@@ -43,6 +43,7 @@ public class ContactApplication {
 
         // TODO: call your functions based on whatever the user's choice is
         switch (choice) {
+
             case 1:
                 // TODO: view all contacts
                 contactList.printItems();
