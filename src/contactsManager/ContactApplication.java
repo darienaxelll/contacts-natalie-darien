@@ -4,8 +4,8 @@ import util.Input;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
-
 import static contactsManager.ContactItem.createFromString;
+
 
 public class ContactApplication {
     public static final int INVALID_CHOICE = -1;
@@ -61,46 +61,27 @@ public class ContactApplication {
                 String phoneNumber = userInput.getString();
                 ContactItem newContact = new ContactItem(firstName, lastName, phoneNumber);
                 contactList.addContactItem(newContact);
-
+                System.out.println(contactList.toString());
+                contactList.printItems();
+                ContactListGateway.writeToFile(contactList);
             }
-//            case 3 -> {
-////                System.out.println("Enter the first name of the contact:");
-////                String searchFirstName = userInput.getString();
-////                System.out.println("Enter the last name of the contact:");
-////                String searchLastName = userInput.getString();
-////                contactList.searchContactItem(searchFirstName, searchLastName);
-//            }
-//            case 4 -> {
-////                System.out.println("Enter the first name of the contact:");
-////                String deleteFirstName = userInput.getString();
-////                System.out.println("Enter the last name of the contact:");
-////                String deleteLastName = userInput.getString();
-////                contactList.removeContactItem(deleteFirstName, deleteLastName);
-//            }
-//
-//
-////
-////            case 1:
-////                // TODO: view all contacts
-////                contactList.printItems();
-////
-////                break;
-////            case 2:
-////                // TODO: add a new contact
-////                contactList.addContactItem(createFromString(userInput.getString()));
-////                break;
-////            case 3:
-////                // TODO: Search contact by name
-////                contactList.getItemByName(userInput.getString());
-////                break;
-////            case 4:
-////                // TODO: Delete contact
-//////                contactList.removeContactItem(userInput.getString(), deleteLastName);
-//////                break;
-////            case 5:
-////                // TODO: Exit
-////                break;
-////        }
-//
-//
-//
+            case 3 -> {
+                System.out.println("Enter the first name of the contact:");
+                String searchFirstName = userInput.getString();
+                System.out.println("Enter the last name of the contact:");
+                String searchLastName = userInput.getString();
+                System.out.println("Enter the phone number:");
+                String phoneNumber = userInput.getString();
+                System.out.println(contactList.getItemByName(searchFirstName + " " + searchLastName + " " + phoneNumber));
+            }
+            case 4 -> {
+//                System.out.println("Enter the first name of the contact:");
+//                String deleteFirstName = userInput.getString();
+//                System.out.println("Enter the last name of the contact:");
+//                String deleteLastName = userInput.getString();
+//                contactList.removeContactItem(deleteFirstName, deleteLastName);
+            }
+        }
+    }
+}
+

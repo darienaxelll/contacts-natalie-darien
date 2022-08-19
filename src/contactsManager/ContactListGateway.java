@@ -48,7 +48,7 @@ public class ContactListGateway {
             // 2. read item strings from file
             List<String> itemStrings = readItemStringsFromFilePath(filePath);
 
-            // 3. make items from the items strings and put them in the groceryList
+            // 3. make items from the items strings and put them in the contactsList
             for(String itemString : itemStrings) {
                 ContactItem item = ContactItem.createFromString(itemString);
                 list.addContactItem(item);
