@@ -13,7 +13,7 @@ public class ContactItem {
 
     public static ContactItem createFromString(String itemString) {
         String [] parts = itemString.split(" ");
-        return new ContactItem(parts[0].trim(), parts[1].trim(),(parts[2].trim()));
+        return new ContactItem(parts[0].trim(), parts[1].trim(),parts[2].trim());
     }
 
     @Override
