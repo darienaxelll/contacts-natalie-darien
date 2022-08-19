@@ -49,16 +49,6 @@ public class ContactList {
         }
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        int index = getIndexOfItemByName(String.valueOf(phoneNumber));
-
-        // 2. remove the item in the grocery list at that index
-        if(index > -1) {
-            ContactItem item = contactItems.get(index);
-            item.setPhoneNumber(phoneNumber);
-        }
-    }
-
     public ContactItem getItemByName(String itemName) {
         int index = getIndexOfItemByName(itemName);
 
