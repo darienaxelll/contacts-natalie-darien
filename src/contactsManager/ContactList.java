@@ -23,6 +23,10 @@ public class ContactList {
         }
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 52e883ae9d1de1051161e629ff69c3f9d44d3953
     private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < contactItems.size(); i++) {
@@ -37,7 +41,7 @@ public class ContactList {
         return index;
     }
 
-    public void removeContactItem(String itemName) {
+    public void removeContactItem(String itemName, String deleteLastName) {
         // 1. find the index of the contact item with itemName
         int index = getIndexOfItemByName(itemName);
 
