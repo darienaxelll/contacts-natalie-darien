@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactList {
-    private ArrayList<ContactItem> contactItems;
-//    private GroceryItem [] groceryItems;
+    private final ArrayList<ContactItem> contactItems;
+
 
     public ContactList() {
         contactItems = new ArrayList<>();
@@ -23,10 +23,7 @@ public class ContactList {
         }
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f46a0795146a8f957b0dc3a955d8f12a7dfc1919
     private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < contactItems.size(); i++) {
