@@ -67,6 +67,4 @@ public class ContactList {
         return itemStrings;
     }
 
-    public void searchContactItem(String searchFirstName, String searchLastName) {
-    }
 }
