@@ -23,7 +23,10 @@ public class ContactList {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f46a0795146a8f957b0dc3a955d8f12a7dfc1919
     private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < contactItems.size(); i++) {
@@ -68,6 +71,4 @@ public class ContactList {
         return itemStrings;
     }
 
-    public void searchContactItem(String searchFirstName, String searchLastName) {
-    }
 }
