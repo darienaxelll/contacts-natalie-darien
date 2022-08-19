@@ -4,7 +4,6 @@ import util.Input;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
-
 import static contactsManager.ContactItem.createFromString;
 
 public class ContactApplication {
@@ -66,11 +65,13 @@ public class ContactApplication {
                 ContactListGateway.writeToFile(contactList);
             }
             case 3 -> {
-//                System.out.println("Enter the first name of the contact:");
-//                String searchFirstName = userInput.getString();
-//                System.out.println("Enter the last name of the contact:");
-//                String searchLastName = userInput.getString();
-//                contactList.searchContactItem(searchFirstName, searchLastName);
+                System.out.println("Enter the first name of the contact:");
+                String searchFirstName = userInput.getString();
+                System.out.println("Enter the last name of the contact:");
+                String searchLastName = userInput.getString();
+                System.out.println("Enter the phone number:");
+                String phoneNumber = userInput.getString();
+                System.out.println(contactList.getItemByName(searchFirstName + " " + searchLastName + " " + phoneNumber));
             }
             case 4 -> {
 //                System.out.println("Enter the first name of the contact:");
