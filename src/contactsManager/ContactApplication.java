@@ -53,6 +53,7 @@ public class ContactApplication {
                 String phoneNumber = userInput.getString();
                 ContactItem newContact = new ContactItem(firstName, lastName, phoneNumber);
                 contactList.addContactItem(newContact);
+                System.out.println(contactList.toString());
             }
             case 3 -> {
                 System.out.println("Enter the first name of the contact:");
@@ -71,28 +72,29 @@ public class ContactApplication {
             case 5 -> System.out.println("Goodbye!");
             default -> System.out.println("Invalid choice. Try again.");
         }
-        switch (choice) {
-
-            case 1:
-                // TODO: view all contacts
-                contactList.printItems();
-                break;
-            case 2:
-                // TODO: add a new contact
-                contactList.addContactItem(createFromString(userInput.getString()));
-                break;
-            case 3:
-                // TODO: Search contact by name
-                contactList.getItemByName(userInput.getString());
-                break;
-            case 4:
-                // TODO: Delete contact
-                contactList.removeContactItem(userInput.getString());
-                break;
-            case 5:
-                // TODO: Exit
-                break;
-        }
+//        switch (choice) {
+//
+//            case 1:
+//                // TODO: view all contacts
+//                contactList.printItems();
+//
+//                break;
+//            case 2:
+//                // TODO: add a new contact
+//                contactList.addContactItem(createFromString(userInput.getString()));
+//                break;
+//            case 3:
+//                // TODO: Search contact by name
+//                contactList.getItemByName(userInput.getString());
+//                break;
+//            case 4:
+//                // TODO: Delete contact
+////                contactList.removeContactItem(userInput.getString(), deleteLastName);
+////                break;
+//            case 5:
+//                // TODO: Exit
+//                break;
+//        }
     }
 }
 
