@@ -9,7 +9,7 @@ public class ContactList {
 
     public ContactList() {
         contactItems = new ArrayList<>();
-//        groceryItems = new GroceryItem[10];
+//        contactItems = new ContactItem[10];
     }
 
     public void addContactItem(ContactItem item) {
@@ -25,11 +25,11 @@ public class ContactList {
         }
     }
 
-    public void removeContactItem(String itemName) {
-        // 1. find the index of the grocery item with itemName
+    public void removeContactItem(String itemName, String deleteLastName) {
+        // 1. find the index of the contact item with itemName
         int index = getIndexOfItemByName(itemName);
 
-        // 2. remove the item in the grocery list at that index
+        // 2. remove the item in the contact list at that index
         if(index > -1) {
             contactItems.remove(index);
         }
@@ -77,5 +77,8 @@ public class ContactList {
             itemStrings.add(item.toString());
         }
         return itemStrings;
+    }
+
+    public void searchContactItem(String searchFirstName, String searchLastName) {
     }
 }
