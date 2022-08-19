@@ -1,16 +1,19 @@
 package contactsManager;
 
 import util.Input;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.List;
 
 import static contactsManager.ContactItem.createFromString;
 
 public class ContactApplication {
     public static final int INVALID_CHOICE = -1;
-    public static final int EXIT_CHOICE = 0;
+    public static final int EXIT_CHOICE = 5;
 
     public static void main(String[] args) {
         Input input = new Input();
-        // loop until the user says he/she does not wish to continue
+//         loop until the user says he/she does not wish to continue
         int choice = INVALID_CHOICE;
         while (choice != EXIT_CHOICE) {
             printMenu();
@@ -31,19 +34,24 @@ public class ContactApplication {
                 Enter an option:\040""");
     }
 
+    public static void showContacts() {
+        List<String> contactsList = null;
+        try {
+            contactsList = Files.readAllLines(ContactListGateway.file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        for (String contact : contactsList) {
+            System.out.println(contact);
+        }
+    }
     private static void doChoice(int choice) {
         Input userInput = new Input();
-
         ContactList contactList = new ContactList();
-        ContactItem person1 = new ContactItem("Matt","Grey", "1231231234");
-        ContactItem person2 = new ContactItem("Nat","Sneed", "1231231235");
-
-        contactList.addContactItem(person1);
-        contactList.addContactItem(person2);
 
         // TODO: call your functions based on whatever the user's choice is
         switch (choice) {
-            case 1 -> contactList.printItems();
+            case 1 -> showContacts();
             case 2 -> {
                 System.out.println("Enter the first name of the contact:");
                 String firstName = userInput.getString();
@@ -53,45 +61,23 @@ public class ContactApplication {
                 String phoneNumber = userInput.getString();
                 ContactItem newContact = new ContactItem(firstName, lastName, phoneNumber);
                 contactList.addContactItem(newContact);
+                contactList.printItems();
+                ContactListGateway.writeToFile(contactList);
             }
             case 3 -> {
-                System.out.println("Enter the first name of the contact:");
-                String searchFirstName = userInput.getString();
-                System.out.println("Enter the last name of the contact:");
-                String searchLastName = userInput.getString();
-                contactList.searchContactItem(searchFirstName, searchLastName);
+//                System.out.println("Enter the first name of the contact:");
+//                String searchFirstName = userInput.getString();
+//                System.out.println("Enter the last name of the contact:");
+//                String searchLastName = userInput.getString();
+//                contactList.searchContactItem(searchFirstName, searchLastName);
             }
             case 4 -> {
-                System.out.println("Enter the first name of the contact:");
-                String deleteFirstName = userInput.getString();
-                System.out.println("Enter the last name of the contact:");
-                String deleteLastName = userInput.getString();
-                contactList.removeContactItem(deleteFirstName, deleteLastName);
+//                System.out.println("Enter the first name of the contact:");
+//                String deleteFirstName = userInput.getString();
+//                System.out.println("Enter the last name of the contact:");
+//                String deleteLastName = userInput.getString();
+//                contactList.removeContactItem(deleteFirstName, deleteLastName);
             }
-            case 5 -> System.out.println("Goodbye!");
-            default -> System.out.println("Invalid choice. Try again.");
-        }
-        switch (choice) {
-
-            case 1:
-                // TODO: view all contacts
-                contactList.printItems();
-                break;
-            case 2:
-                // TODO: add a new contact
-                contactList.addContactItem(createFromString(userInput.getString()));
-                break;
-            case 3:
-                // TODO: Search contact by name
-                contactList.getItemByName(userInput.getString());
-                break;
-            case 4:
-                // TODO: Delete contact
-                contactList.removeContactItem(userInput.getString());
-                break;
-            case 5:
-                // TODO: Exit
-                break;
         }
     }
 }

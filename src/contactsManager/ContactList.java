@@ -13,8 +13,6 @@ public class ContactList {
     }
 
     public void addContactItem(ContactItem item) {
-        // array specific
-//        groceryItems[0] = item;
         contactItems.add(item);
     }
 
@@ -25,19 +23,6 @@ public class ContactList {
         }
     }
 
-<<<<<<< HEAD
-    public void removeContactItem(String itemName, String deleteLastName) {
-        // 1. find the index of the contact item with itemName
-        int index = getIndexOfItemByName(itemName);
-
-        // 2. remove the item in the contact list at that index
-        if(index > -1) {
-            contactItems.remove(index);
-        }
-    }
-
-=======
->>>>>>> 72c8a018524ad7f9673f576d94fb4160f94785f6
     private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < contactItems.size(); i++) {

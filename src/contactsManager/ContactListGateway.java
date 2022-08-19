@@ -4,14 +4,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactListGateway {
+    public static Path folder = Paths.get("data");
+    public static Path file = Paths.get("data", "contacts.txt");
 
         public static void writeToFile(ContactList contactList) {
             // 1. make a path object
-            Path filePath = getFilePath();
+//            Path filePath = getFilePath();
+            Path filePath = file;
             if(filePath == null) {
                 System.out.println("Filepath could not be created. Cannot save.");
                 return;
@@ -23,7 +25,6 @@ public class ContactListGateway {
             // 3. use Files.write to send the data to the file
             writeItemStringsToFilePath(filePath, itemStrings);
         }
-
 
         private static void writeItemStringsToFilePath(Path filePath, List<String> itemStrings) {
             try {
@@ -37,7 +38,8 @@ public class ContactListGateway {
             ContactList list = new ContactList();
 
             // 1. make a path object
-            Path filePath = getFilePath();
+//            Path filePath = getFilePath();
+            Path filePath = file;
             if(filePath == null) {
                 System.out.println("Filepath could not be created. Cannot load.");
                 return list;
@@ -54,36 +56,12 @@ public class ContactListGateway {
             return list;
         }
 
-        private static List<String> readItemStringsFromFilePath(Path filePath) {
+        public static List<String> readItemStringsFromFilePath(Path filePath) {
             try {
                 return Files.readAllLines(filePath);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
-
-        // does everything for the data file and its contain directory
-        // and returns the Path object we need to work with the data file
-        private static Path getFilePath() {
-            try {
-                Path folder = Paths.get("contact_list");
-                Path file = Paths.get("contact_list", "data.txt");
-                if(Files.exists(folder)) {
-                    System.out.println("Hey the folder already exists!");
-                } else {
-                    Files.createDirectories(folder);
-                }
-                if(Files.exists(file)) {
-                    System.out.println("Hey the file already exists!");
-                } else {
-                    Files.createFile(file);
-                }
-                return file;
-            } catch(IOException e) {
-                // log an error message so at least we know something went wrong
-                System.err.println(e.getMessage());
-            }
-            return null;
         }
 
     }
